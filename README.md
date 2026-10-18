@@ -46,7 +46,9 @@ npm install
 npm run build
 ```
 
-`package.json` 里的 `output` 必须是 `dist`。如果是上传插件包 / 提交 GitHub 仓库，需要把构建后的 `dist/` 一起带上，平台会按这个目录加载页面。
+官方托管会用 **Node v16.19.0 / npm 8.19.3** 执行 `npm install` 和 `npm run build`。本仓库已按官方应用插件模板固定为 Vite 3，并在 `package.json` 设置 `output: dist`。
+
+如果是上传插件包 / 提交 GitHub 仓库，请带上构建后的 `dist/`。
 
 不要把本仓库当成字段捷径（FaaS/公式）或工作流节点包去发，类型选错会直接发布失败。
 
