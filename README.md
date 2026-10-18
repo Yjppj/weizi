@@ -35,6 +35,21 @@ npx cloudflared tunnel --url http://localhost:5173
 
 把 cloudflared 输出的 `https://*.trycloudflare.com` 填进服务地址。也可以用 `npm run dev:https` 启动本机自签证书，或把 `dist/` 部署到 GitHub Pages / Cloudflare Pages 后再填正式 HTTPS 地址。
 
+## 发布到飞书插件市场前
+
+这个仓库是 **应用模式插件**（自定义 Web 页面），不是字段捷径、边栏、连接器或工作流节点。
+
+发布前必须：
+
+```bash
+npm install
+npm run build
+```
+
+`package.json` 里的 `output` 必须是 `dist`。如果是上传插件包 / 提交 GitHub 仓库，需要把构建后的 `dist/` 一起带上，平台会按这个目录加载页面。
+
+不要把本仓库当成字段捷径（FaaS/公式）或工作流节点包去发，类型选错会直接发布失败。
+
 ## 如何验证读到了真实数据
 
 1. 在飞书应用模式页面中打开该插件。

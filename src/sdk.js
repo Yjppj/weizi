@@ -235,7 +235,12 @@ export async function tryCompleteDashboardConfig(bitable, tableId) {
   if (!isConfig) return { saved: false, state };
   try {
     await dashboard.saveConfig({
-      dataConditions: tableId ? [{ tableId }] : [],
+      dataConditions: tableId
+        ? [{
+            tableId,
+            series: 'COUNTA',
+          }]
+        : [],
       customConfig: { workbench: true },
     });
     return { saved: true, state };

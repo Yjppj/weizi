@@ -1,10 +1,11 @@
 {
   "name": "weizi-base-workbench",
-  "private": true,
   "version": "1.0.0",
   "type": "module",
+  "output": "dist",
   "description": "飞书多维表格应用模式自定义插件：真实数据读取工作台",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "dev:https": "vite --config vite.https.config.js",
     "build": "vite build",
